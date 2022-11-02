@@ -1,0 +1,11 @@
+/* Add application styles & imports to this file! */
+.button {
+  background-color:rgb(37, 37, 160);
+  color: rgb(170, 21, 21);
+  border:none;
+  border-radius:10px;
+  cursor: pointer;
+}
+body {
+background-color: rgb(88, 183, 196);
+}

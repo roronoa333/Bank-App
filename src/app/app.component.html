@@ -1,0 +1,16 @@
+<hello name="{{ name }}"></hello>
+<style>
+.button {
+  background-color:blue;
+  color: #ffff;
+  border:none;
+  border-radius:10px;
+  cursor: pointer;
+}
+</style>
+Enter Amount : <input type="number" id="amount" name= "amount" [(ngModel)] = "amount"> 
+<p> </p>
+<button class="button" my-button (click)="Deposit()"> Deposit </button>
+<button class="button" my-button (click)="Withdraw()"> Withdraw </button>
+<p> </p>
+<p> Account Balance : $ {{result}} </p>
