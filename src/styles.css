@@ -1,11 +1,35 @@
 /* Add application styles & imports to this file! */
 .button {
   background-color:rgb(37, 37, 160);
-  color: rgb(170, 21, 21);
+  color: rgb(240, 233, 233);
   border:none;
   border-radius:10px;
   cursor: pointer;
 }
+.button2 {
+  background-color:rgb(37, 37, 160);
+  color: rgb(243, 237, 237);
+  border:none;
+  border-radius:10px;
+  cursor: pointer;
+  right: 160px;
+}
 body {
-background-color: rgb(88, 183, 196);
+background-color: rgb(24, 102, 175);
+}
+h1 {
+  position: relative;
+  left: 180px;
+  top: -85px;
+  font-family: Monospace;
+  color: whitesmoke;
+}
+div.relative {
+  position: relative;
+  left: 60px;
+}
+table, th, td {
+  border:1px solid rgb(206, 205, 219);
+  color: rgb(203, 214, 224);
+  font-family: 'Times New Roman', Times, serif;
 }

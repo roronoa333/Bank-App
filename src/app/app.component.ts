@@ -7,30 +7,44 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = "Verisk Banking Application";
   amount;
+  NewRows:any[] = [];
   result;
+  addRow() {
+    
+  }
   Deposit() {
-    var num = parseInt(this.amount);
-    console.log(this.amount)
     if (this.amount != undefined){
       if (this.result == undefined){
-        this.result = num;
+        this.result = this.amount;
       }
       else if (this.result != undefined){
-        this.result = this.result + num;
+        this.result = this.result + this.amount;
       }
+      this.NewRows.push({
+        DateAndTime : new Date().toLocaleString(),
+        TypeOfTransaction : "Deposit",
+        Amount : this.amount,
+        Balance : this.result
+      })
+      this.amount = 0;
     }
   }
   Withdraw() {
-    var num = parseInt(this.amount);
       if (this.amount != undefined){
         if (this.result == undefined){
-          this.result = -num;
+          this.result = -this.amount;
         }
         else if (this.result != undefined){
-          this.result = this.result - num;
+          this.result = this.result - this.amount;
         }
       }
+      this.NewRows.push({
+        DateAndTime : new Date().toLocaleString(),
+        TypeOfTransaction : "Withdraw",
+        Amount : this.amount,
+        Balance : this.result
+      })
+      this.amount = 0;
     }
   }
