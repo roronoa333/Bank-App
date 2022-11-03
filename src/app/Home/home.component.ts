@@ -9,7 +9,6 @@ export class HomeComponent {
   constructor(private shared: SharedService) {}
   amount;
   NewRows: any[] = [];
-  string_result: any = localStorage.getItem('result');
   result:number = this.shared.getBalance();
 
   Deposit() {
@@ -18,6 +17,9 @@ export class HomeComponent {
         this.result = parseFloat(this.amount);
       } else if (this.result != undefined) {
         this.result = this.result + parseFloat(this.amount);
+      }
+      if (this.result >= 0){
+        document.getElementById("message").innerHTML = ''
       }
       this.NewRows.unshift({
         DateAndTime: new Date().toLocaleString(),
@@ -36,11 +38,14 @@ export class HomeComponent {
       if (this.result == undefined) {
         this.result = -this.amount;
       } else if (this.result != undefined) {
-        this.result = this.result - this.amount;
+        this.result = this.result - parseFloat(this.amount);
       }
     }
     if (this.result < 0){
-      alert("Notification : Please check that your Balance is Negetive.");
+      document.getElementById("message").innerHTML = 'You have negetive balance, please deposit funds to avoid credit charges'
+    }
+    else{
+      document.getElementById("message").innerHTML = ''
     }
     this.NewRows.unshift({
       DateAndTime: new Date().toLocaleString(),
@@ -48,7 +53,7 @@ export class HomeComponent {
       Amount: '$' + this.amount,
       Balance:
         '$' +
-        (this.result % 1 ? this.result.toFixed(2) : this.result).toString(),
+        parseFloat(this.result.toFixed(2)).toString(),
     });
     this.amount = 0;
     this.store();
