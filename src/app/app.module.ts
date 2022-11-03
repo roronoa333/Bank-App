@@ -1,16 +1,18 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { MyButtonDirective } from './button.directive';
 import { ButtonComponent } from './button/button.component';
+import { appRoutingModule } from './app.routing';
+import { TransactionComponent } from './transaction';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './Home/home.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, MyButtonDirective, ButtonComponent ],
-  bootstrap:    [ AppComponent ]
+  imports:      [ BrowserModule, ReactiveFormsModule, FormsModule, appRoutingModule],
+  declarations: [ AppComponent, HomeComponent , MyButtonDirective, ButtonComponent, TransactionComponent ],
+  bootstrap:    [ AppComponent]
 })
 export class AppModule { }
 

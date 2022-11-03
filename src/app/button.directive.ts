@@ -10,7 +10,5 @@ export class MyButtonDirective {
   Deposit($event) {
     $event.stopPropagation();
     $event.preventDefault();
-    console.log($event)
-    console.log('clicked!');
   }
 }

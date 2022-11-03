@@ -1,29 +1,13 @@
-<div class="relative" >
-<img src="https://github.com/roronoa333/Bank-App/blob/main/src/verisk-analytics--600.png?raw=true" alt="Verisk-logo" width="100" 
-height="100"> 
-</div>
-<h1> Verisk Bank App</h1>
-<p style="color:white; font-size:110%;"> Enter Transaction Amount : <input type="number" id="amount" name= "amount" [(ngModel)] = "amount"> </p>
-<p> </p>
-<button class="button" my-button (click)="Deposit()"> Deposit </button>
-<button class="button2" my-button (click)="Withdraw()" > Withdraw </button>
-<p> </p>
-<p style="color:white; font-size:120%;"> Account Balance : $ {{result}} </p>
-<table style="width:100%">
-<thead>
-<tr>
-  <th>Date and Time</th>
-  <th>Type of Transaction</th>
-  <th>Amount</th>
-  <th>Balance</th>
-</tr>
-</thead>
-<tbody>
-  <tr *ngFor = "let ele of NewRows">
-    <td>{{ele.DateAndTime}} </td>
-    <td>{{ele.TypeOfTransaction}} </td>
-    <td>{{ele.Amount}} </td>
-    <td>{{ele.Balance}} </td>
-  </tr>
-</tbody>
-</table>
+<ul class="nav navbar-nav">
+<li>
+  <a routerLink=""> Withdraw or Deposit </a>
+</li>
+<li>
+  <a routerLink="transaction"> See Transaction History</a>
+</li>
+<li>
+<button class = barbutton my-button (click)="clear()"> Clear </button>
+</li>
+</ul>
+
+<router-outlet> </router-outlet>
